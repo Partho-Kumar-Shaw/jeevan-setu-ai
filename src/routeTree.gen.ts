@@ -9,8 +9,92 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
+import { Route as SosRouteImport } from './routes/sos'
+import { Route as SignupRouteImport } from './routes/signup'
+import { Route as SettingsRouteImport } from './routes/settings'
+import { Route as ScannerRouteImport } from './routes/scanner'
+import { Route as MedicinesRouteImport } from './routes/medicines'
+import { Route as LoginRouteImport } from './routes/login'
+import { Route as LockerRouteImport } from './routes/locker'
+import { Route as HospitalsRouteImport } from './routes/hospitals'
+import { Route as FamilyRouteImport } from './routes/family'
+import { Route as DoctorsRouteImport } from './routes/doctors'
+import { Route as DashboardRouteImport } from './routes/dashboard'
+import { Route as BloodRouteImport } from './routes/blood'
+import { Route as AssistantRouteImport } from './routes/assistant'
+import { Route as AnalyticsRouteImport } from './routes/analytics'
 import { Route as IndexRouteImport } from './routes/index'
 
+const SosRoute = SosRouteImport.update({
+  id: '/sos',
+  path: '/sos',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const SignupRoute = SignupRouteImport.update({
+  id: '/signup',
+  path: '/signup',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const SettingsRoute = SettingsRouteImport.update({
+  id: '/settings',
+  path: '/settings',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ScannerRoute = ScannerRouteImport.update({
+  id: '/scanner',
+  path: '/scanner',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const MedicinesRoute = MedicinesRouteImport.update({
+  id: '/medicines',
+  path: '/medicines',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const LoginRoute = LoginRouteImport.update({
+  id: '/login',
+  path: '/login',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const LockerRoute = LockerRouteImport.update({
+  id: '/locker',
+  path: '/locker',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const HospitalsRoute = HospitalsRouteImport.update({
+  id: '/hospitals',
+  path: '/hospitals',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const FamilyRoute = FamilyRouteImport.update({
+  id: '/family',
+  path: '/family',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const DoctorsRoute = DoctorsRouteImport.update({
+  id: '/doctors',
+  path: '/doctors',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const DashboardRoute = DashboardRouteImport.update({
+  id: '/dashboard',
+  path: '/dashboard',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const BloodRoute = BloodRouteImport.update({
+  id: '/blood',
+  path: '/blood',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AssistantRoute = AssistantRouteImport.update({
+  id: '/assistant',
+  path: '/assistant',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AnalyticsRoute = AnalyticsRouteImport.update({
+  id: '/analytics',
+  path: '/analytics',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
@@ -19,28 +103,228 @@ const IndexRoute = IndexRouteImport.update({
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/analytics': typeof AnalyticsRoute
+  '/assistant': typeof AssistantRoute
+  '/blood': typeof BloodRoute
+  '/dashboard': typeof DashboardRoute
+  '/doctors': typeof DoctorsRoute
+  '/family': typeof FamilyRoute
+  '/hospitals': typeof HospitalsRoute
+  '/locker': typeof LockerRoute
+  '/login': typeof LoginRoute
+  '/medicines': typeof MedicinesRoute
+  '/scanner': typeof ScannerRoute
+  '/settings': typeof SettingsRoute
+  '/signup': typeof SignupRoute
+  '/sos': typeof SosRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/analytics': typeof AnalyticsRoute
+  '/assistant': typeof AssistantRoute
+  '/blood': typeof BloodRoute
+  '/dashboard': typeof DashboardRoute
+  '/doctors': typeof DoctorsRoute
+  '/family': typeof FamilyRoute
+  '/hospitals': typeof HospitalsRoute
+  '/locker': typeof LockerRoute
+  '/login': typeof LoginRoute
+  '/medicines': typeof MedicinesRoute
+  '/scanner': typeof ScannerRoute
+  '/settings': typeof SettingsRoute
+  '/signup': typeof SignupRoute
+  '/sos': typeof SosRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/analytics': typeof AnalyticsRoute
+  '/assistant': typeof AssistantRoute
+  '/blood': typeof BloodRoute
+  '/dashboard': typeof DashboardRoute
+  '/doctors': typeof DoctorsRoute
+  '/family': typeof FamilyRoute
+  '/hospitals': typeof HospitalsRoute
+  '/locker': typeof LockerRoute
+  '/login': typeof LoginRoute
+  '/medicines': typeof MedicinesRoute
+  '/scanner': typeof ScannerRoute
+  '/settings': typeof SettingsRoute
+  '/signup': typeof SignupRoute
+  '/sos': typeof SosRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/'
+  fullPaths:
+    | '/'
+    | '/analytics'
+    | '/assistant'
+    | '/blood'
+    | '/dashboard'
+    | '/doctors'
+    | '/family'
+    | '/hospitals'
+    | '/locker'
+    | '/login'
+    | '/medicines'
+    | '/scanner'
+    | '/settings'
+    | '/signup'
+    | '/sos'
   fileRoutesByTo: FileRoutesByTo
-  to: '/'
-  id: '__root__' | '/'
+  to:
+    | '/'
+    | '/analytics'
+    | '/assistant'
+    | '/blood'
+    | '/dashboard'
+    | '/doctors'
+    | '/family'
+    | '/hospitals'
+    | '/locker'
+    | '/login'
+    | '/medicines'
+    | '/scanner'
+    | '/settings'
+    | '/signup'
+    | '/sos'
+  id:
+    | '__root__'
+    | '/'
+    | '/analytics'
+    | '/assistant'
+    | '/blood'
+    | '/dashboard'
+    | '/doctors'
+    | '/family'
+    | '/hospitals'
+    | '/locker'
+    | '/login'
+    | '/medicines'
+    | '/scanner'
+    | '/settings'
+    | '/signup'
+    | '/sos'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  AnalyticsRoute: typeof AnalyticsRoute
+  AssistantRoute: typeof AssistantRoute
+  BloodRoute: typeof BloodRoute
+  DashboardRoute: typeof DashboardRoute
+  DoctorsRoute: typeof DoctorsRoute
+  FamilyRoute: typeof FamilyRoute
+  HospitalsRoute: typeof HospitalsRoute
+  LockerRoute: typeof LockerRoute
+  LoginRoute: typeof LoginRoute
+  MedicinesRoute: typeof MedicinesRoute
+  ScannerRoute: typeof ScannerRoute
+  SettingsRoute: typeof SettingsRoute
+  SignupRoute: typeof SignupRoute
+  SosRoute: typeof SosRoute
 }
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
+    '/sos': {
+      id: '/sos'
+      path: '/sos'
+      fullPath: '/sos'
+      preLoaderRoute: typeof SosRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/signup': {
+      id: '/signup'
+      path: '/signup'
+      fullPath: '/signup'
+      preLoaderRoute: typeof SignupRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/settings': {
+      id: '/settings'
+      path: '/settings'
+      fullPath: '/settings'
+      preLoaderRoute: typeof SettingsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/scanner': {
+      id: '/scanner'
+      path: '/scanner'
+      fullPath: '/scanner'
+      preLoaderRoute: typeof ScannerRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/medicines': {
+      id: '/medicines'
+      path: '/medicines'
+      fullPath: '/medicines'
+      preLoaderRoute: typeof MedicinesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/login': {
+      id: '/login'
+      path: '/login'
+      fullPath: '/login'
+      preLoaderRoute: typeof LoginRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/locker': {
+      id: '/locker'
+      path: '/locker'
+      fullPath: '/locker'
+      preLoaderRoute: typeof LockerRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/hospitals': {
+      id: '/hospitals'
+      path: '/hospitals'
+      fullPath: '/hospitals'
+      preLoaderRoute: typeof HospitalsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/family': {
+      id: '/family'
+      path: '/family'
+      fullPath: '/family'
+      preLoaderRoute: typeof FamilyRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/doctors': {
+      id: '/doctors'
+      path: '/doctors'
+      fullPath: '/doctors'
+      preLoaderRoute: typeof DoctorsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/dashboard': {
+      id: '/dashboard'
+      path: '/dashboard'
+      fullPath: '/dashboard'
+      preLoaderRoute: typeof DashboardRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/blood': {
+      id: '/blood'
+      path: '/blood'
+      fullPath: '/blood'
+      preLoaderRoute: typeof BloodRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/assistant': {
+      id: '/assistant'
+      path: '/assistant'
+      fullPath: '/assistant'
+      preLoaderRoute: typeof AssistantRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/analytics': {
+      id: '/analytics'
+      path: '/analytics'
+      fullPath: '/analytics'
+      preLoaderRoute: typeof AnalyticsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/': {
       id: '/'
       path: '/'
@@ -53,6 +337,20 @@ declare module '@tanstack/react-router' {
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  AnalyticsRoute: AnalyticsRoute,
+  AssistantRoute: AssistantRoute,
+  BloodRoute: BloodRoute,
+  DashboardRoute: DashboardRoute,
+  DoctorsRoute: DoctorsRoute,
+  FamilyRoute: FamilyRoute,
+  HospitalsRoute: HospitalsRoute,
+  LockerRoute: LockerRoute,
+  LoginRoute: LoginRoute,
+  MedicinesRoute: MedicinesRoute,
+  ScannerRoute: ScannerRoute,
+  SettingsRoute: SettingsRoute,
+  SignupRoute: SignupRoute,
+  SosRoute: SosRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
