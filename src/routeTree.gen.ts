@@ -9,22 +9,40 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
+import { Route as WomenRouteImport } from './routes/women'
 import { Route as SosRouteImport } from './routes/sos'
 import { Route as SignupRouteImport } from './routes/signup'
 import { Route as SettingsRouteImport } from './routes/settings'
+import { Route as SchemesRouteImport } from './routes/schemes'
 import { Route as ScannerRouteImport } from './routes/scanner'
+import { Route as ReportsRouteImport } from './routes/reports'
+import { Route as ProfileRouteImport } from './routes/profile'
+import { Route as OnboardingRouteImport } from './routes/onboarding'
+import { Route as NotificationsRouteImport } from './routes/notifications'
+import { Route as MentalRouteImport } from './routes/mental'
 import { Route as MedicinesRouteImport } from './routes/medicines'
 import { Route as LoginRouteImport } from './routes/login'
 import { Route as LockerRouteImport } from './routes/locker'
+import { Route as LifestyleRouteImport } from './routes/lifestyle'
 import { Route as HospitalsRouteImport } from './routes/hospitals'
+import { Route as FeaturesRouteImport } from './routes/features'
 import { Route as FamilyRouteImport } from './routes/family'
 import { Route as DoctorsRouteImport } from './routes/doctors'
+import { Route as DiseasesRouteImport } from './routes/diseases'
 import { Route as DashboardRouteImport } from './routes/dashboard'
+import { Route as ContactRouteImport } from './routes/contact'
+import { Route as ChildrenRouteImport } from './routes/children'
 import { Route as BloodRouteImport } from './routes/blood'
 import { Route as AssistantRouteImport } from './routes/assistant'
 import { Route as AnalyticsRouteImport } from './routes/analytics'
+import { Route as AboutRouteImport } from './routes/about'
 import { Route as IndexRouteImport } from './routes/index'
 
+const WomenRoute = WomenRouteImport.update({
+  id: '/women',
+  path: '/women',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const SosRoute = SosRouteImport.update({
   id: '/sos',
   path: '/sos',
@@ -40,9 +58,39 @@ const SettingsRoute = SettingsRouteImport.update({
   path: '/settings',
   getParentRoute: () => rootRouteImport,
 } as any)
+const SchemesRoute = SchemesRouteImport.update({
+  id: '/schemes',
+  path: '/schemes',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const ScannerRoute = ScannerRouteImport.update({
   id: '/scanner',
   path: '/scanner',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ReportsRoute = ReportsRouteImport.update({
+  id: '/reports',
+  path: '/reports',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ProfileRoute = ProfileRouteImport.update({
+  id: '/profile',
+  path: '/profile',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const OnboardingRoute = OnboardingRouteImport.update({
+  id: '/onboarding',
+  path: '/onboarding',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const NotificationsRoute = NotificationsRouteImport.update({
+  id: '/notifications',
+  path: '/notifications',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const MentalRoute = MentalRouteImport.update({
+  id: '/mental',
+  path: '/mental',
   getParentRoute: () => rootRouteImport,
 } as any)
 const MedicinesRoute = MedicinesRouteImport.update({
@@ -60,9 +108,19 @@ const LockerRoute = LockerRouteImport.update({
   path: '/locker',
   getParentRoute: () => rootRouteImport,
 } as any)
+const LifestyleRoute = LifestyleRouteImport.update({
+  id: '/lifestyle',
+  path: '/lifestyle',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const HospitalsRoute = HospitalsRouteImport.update({
   id: '/hospitals',
   path: '/hospitals',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const FeaturesRoute = FeaturesRouteImport.update({
+  id: '/features',
+  path: '/features',
   getParentRoute: () => rootRouteImport,
 } as any)
 const FamilyRoute = FamilyRouteImport.update({
@@ -75,9 +133,24 @@ const DoctorsRoute = DoctorsRouteImport.update({
   path: '/doctors',
   getParentRoute: () => rootRouteImport,
 } as any)
+const DiseasesRoute = DiseasesRouteImport.update({
+  id: '/diseases',
+  path: '/diseases',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const DashboardRoute = DashboardRouteImport.update({
   id: '/dashboard',
   path: '/dashboard',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ContactRoute = ContactRouteImport.update({
+  id: '/contact',
+  path: '/contact',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ChildrenRoute = ChildrenRouteImport.update({
+  id: '/children',
+  path: '/children',
   getParentRoute: () => rootRouteImport,
 } as any)
 const BloodRoute = BloodRouteImport.update({
@@ -95,6 +168,11 @@ const AnalyticsRoute = AnalyticsRouteImport.update({
   path: '/analytics',
   getParentRoute: () => rootRouteImport,
 } as any)
+const AboutRoute = AboutRouteImport.update({
+  id: '/about',
+  path: '/about',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
@@ -103,130 +181,228 @@ const IndexRoute = IndexRouteImport.update({
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/about': typeof AboutRoute
   '/analytics': typeof AnalyticsRoute
   '/assistant': typeof AssistantRoute
   '/blood': typeof BloodRoute
+  '/children': typeof ChildrenRoute
+  '/contact': typeof ContactRoute
   '/dashboard': typeof DashboardRoute
+  '/diseases': typeof DiseasesRoute
   '/doctors': typeof DoctorsRoute
   '/family': typeof FamilyRoute
+  '/features': typeof FeaturesRoute
   '/hospitals': typeof HospitalsRoute
+  '/lifestyle': typeof LifestyleRoute
   '/locker': typeof LockerRoute
   '/login': typeof LoginRoute
   '/medicines': typeof MedicinesRoute
+  '/mental': typeof MentalRoute
+  '/notifications': typeof NotificationsRoute
+  '/onboarding': typeof OnboardingRoute
+  '/profile': typeof ProfileRoute
+  '/reports': typeof ReportsRoute
   '/scanner': typeof ScannerRoute
+  '/schemes': typeof SchemesRoute
   '/settings': typeof SettingsRoute
   '/signup': typeof SignupRoute
   '/sos': typeof SosRoute
+  '/women': typeof WomenRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/about': typeof AboutRoute
   '/analytics': typeof AnalyticsRoute
   '/assistant': typeof AssistantRoute
   '/blood': typeof BloodRoute
+  '/children': typeof ChildrenRoute
+  '/contact': typeof ContactRoute
   '/dashboard': typeof DashboardRoute
+  '/diseases': typeof DiseasesRoute
   '/doctors': typeof DoctorsRoute
   '/family': typeof FamilyRoute
+  '/features': typeof FeaturesRoute
   '/hospitals': typeof HospitalsRoute
+  '/lifestyle': typeof LifestyleRoute
   '/locker': typeof LockerRoute
   '/login': typeof LoginRoute
   '/medicines': typeof MedicinesRoute
+  '/mental': typeof MentalRoute
+  '/notifications': typeof NotificationsRoute
+  '/onboarding': typeof OnboardingRoute
+  '/profile': typeof ProfileRoute
+  '/reports': typeof ReportsRoute
   '/scanner': typeof ScannerRoute
+  '/schemes': typeof SchemesRoute
   '/settings': typeof SettingsRoute
   '/signup': typeof SignupRoute
   '/sos': typeof SosRoute
+  '/women': typeof WomenRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/about': typeof AboutRoute
   '/analytics': typeof AnalyticsRoute
   '/assistant': typeof AssistantRoute
   '/blood': typeof BloodRoute
+  '/children': typeof ChildrenRoute
+  '/contact': typeof ContactRoute
   '/dashboard': typeof DashboardRoute
+  '/diseases': typeof DiseasesRoute
   '/doctors': typeof DoctorsRoute
   '/family': typeof FamilyRoute
+  '/features': typeof FeaturesRoute
   '/hospitals': typeof HospitalsRoute
+  '/lifestyle': typeof LifestyleRoute
   '/locker': typeof LockerRoute
   '/login': typeof LoginRoute
   '/medicines': typeof MedicinesRoute
+  '/mental': typeof MentalRoute
+  '/notifications': typeof NotificationsRoute
+  '/onboarding': typeof OnboardingRoute
+  '/profile': typeof ProfileRoute
+  '/reports': typeof ReportsRoute
   '/scanner': typeof ScannerRoute
+  '/schemes': typeof SchemesRoute
   '/settings': typeof SettingsRoute
   '/signup': typeof SignupRoute
   '/sos': typeof SosRoute
+  '/women': typeof WomenRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
   fullPaths:
     | '/'
+    | '/about'
     | '/analytics'
     | '/assistant'
     | '/blood'
+    | '/children'
+    | '/contact'
     | '/dashboard'
+    | '/diseases'
     | '/doctors'
     | '/family'
+    | '/features'
     | '/hospitals'
+    | '/lifestyle'
     | '/locker'
     | '/login'
     | '/medicines'
+    | '/mental'
+    | '/notifications'
+    | '/onboarding'
+    | '/profile'
+    | '/reports'
     | '/scanner'
+    | '/schemes'
     | '/settings'
     | '/signup'
     | '/sos'
+    | '/women'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
+    | '/about'
     | '/analytics'
     | '/assistant'
     | '/blood'
+    | '/children'
+    | '/contact'
     | '/dashboard'
+    | '/diseases'
     | '/doctors'
     | '/family'
+    | '/features'
     | '/hospitals'
+    | '/lifestyle'
     | '/locker'
     | '/login'
     | '/medicines'
+    | '/mental'
+    | '/notifications'
+    | '/onboarding'
+    | '/profile'
+    | '/reports'
     | '/scanner'
+    | '/schemes'
     | '/settings'
     | '/signup'
     | '/sos'
+    | '/women'
   id:
     | '__root__'
     | '/'
+    | '/about'
     | '/analytics'
     | '/assistant'
     | '/blood'
+    | '/children'
+    | '/contact'
     | '/dashboard'
+    | '/diseases'
     | '/doctors'
     | '/family'
+    | '/features'
     | '/hospitals'
+    | '/lifestyle'
     | '/locker'
     | '/login'
     | '/medicines'
+    | '/mental'
+    | '/notifications'
+    | '/onboarding'
+    | '/profile'
+    | '/reports'
     | '/scanner'
+    | '/schemes'
     | '/settings'
     | '/signup'
     | '/sos'
+    | '/women'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  AboutRoute: typeof AboutRoute
   AnalyticsRoute: typeof AnalyticsRoute
   AssistantRoute: typeof AssistantRoute
   BloodRoute: typeof BloodRoute
+  ChildrenRoute: typeof ChildrenRoute
+  ContactRoute: typeof ContactRoute
   DashboardRoute: typeof DashboardRoute
+  DiseasesRoute: typeof DiseasesRoute
   DoctorsRoute: typeof DoctorsRoute
   FamilyRoute: typeof FamilyRoute
+  FeaturesRoute: typeof FeaturesRoute
   HospitalsRoute: typeof HospitalsRoute
+  LifestyleRoute: typeof LifestyleRoute
   LockerRoute: typeof LockerRoute
   LoginRoute: typeof LoginRoute
   MedicinesRoute: typeof MedicinesRoute
+  MentalRoute: typeof MentalRoute
+  NotificationsRoute: typeof NotificationsRoute
+  OnboardingRoute: typeof OnboardingRoute
+  ProfileRoute: typeof ProfileRoute
+  ReportsRoute: typeof ReportsRoute
   ScannerRoute: typeof ScannerRoute
+  SchemesRoute: typeof SchemesRoute
   SettingsRoute: typeof SettingsRoute
   SignupRoute: typeof SignupRoute
   SosRoute: typeof SosRoute
+  WomenRoute: typeof WomenRoute
 }
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
+    '/women': {
+      id: '/women'
+      path: '/women'
+      fullPath: '/women'
+      preLoaderRoute: typeof WomenRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/sos': {
       id: '/sos'
       path: '/sos'
@@ -248,11 +424,53 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof SettingsRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/schemes': {
+      id: '/schemes'
+      path: '/schemes'
+      fullPath: '/schemes'
+      preLoaderRoute: typeof SchemesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/scanner': {
       id: '/scanner'
       path: '/scanner'
       fullPath: '/scanner'
       preLoaderRoute: typeof ScannerRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/reports': {
+      id: '/reports'
+      path: '/reports'
+      fullPath: '/reports'
+      preLoaderRoute: typeof ReportsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/profile': {
+      id: '/profile'
+      path: '/profile'
+      fullPath: '/profile'
+      preLoaderRoute: typeof ProfileRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/onboarding': {
+      id: '/onboarding'
+      path: '/onboarding'
+      fullPath: '/onboarding'
+      preLoaderRoute: typeof OnboardingRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/notifications': {
+      id: '/notifications'
+      path: '/notifications'
+      fullPath: '/notifications'
+      preLoaderRoute: typeof NotificationsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/mental': {
+      id: '/mental'
+      path: '/mental'
+      fullPath: '/mental'
+      preLoaderRoute: typeof MentalRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/medicines': {
@@ -276,11 +494,25 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof LockerRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/lifestyle': {
+      id: '/lifestyle'
+      path: '/lifestyle'
+      fullPath: '/lifestyle'
+      preLoaderRoute: typeof LifestyleRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/hospitals': {
       id: '/hospitals'
       path: '/hospitals'
       fullPath: '/hospitals'
       preLoaderRoute: typeof HospitalsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/features': {
+      id: '/features'
+      path: '/features'
+      fullPath: '/features'
+      preLoaderRoute: typeof FeaturesRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/family': {
@@ -297,11 +529,32 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof DoctorsRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/diseases': {
+      id: '/diseases'
+      path: '/diseases'
+      fullPath: '/diseases'
+      preLoaderRoute: typeof DiseasesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/dashboard': {
       id: '/dashboard'
       path: '/dashboard'
       fullPath: '/dashboard'
       preLoaderRoute: typeof DashboardRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/contact': {
+      id: '/contact'
+      path: '/contact'
+      fullPath: '/contact'
+      preLoaderRoute: typeof ContactRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/children': {
+      id: '/children'
+      path: '/children'
+      fullPath: '/children'
+      preLoaderRoute: typeof ChildrenRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/blood': {
@@ -325,6 +578,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof AnalyticsRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/about': {
+      id: '/about'
+      path: '/about'
+      fullPath: '/about'
+      preLoaderRoute: typeof AboutRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/': {
       id: '/'
       path: '/'
@@ -337,20 +597,33 @@ declare module '@tanstack/react-router' {
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  AboutRoute: AboutRoute,
   AnalyticsRoute: AnalyticsRoute,
   AssistantRoute: AssistantRoute,
   BloodRoute: BloodRoute,
+  ChildrenRoute: ChildrenRoute,
+  ContactRoute: ContactRoute,
   DashboardRoute: DashboardRoute,
+  DiseasesRoute: DiseasesRoute,
   DoctorsRoute: DoctorsRoute,
   FamilyRoute: FamilyRoute,
+  FeaturesRoute: FeaturesRoute,
   HospitalsRoute: HospitalsRoute,
+  LifestyleRoute: LifestyleRoute,
   LockerRoute: LockerRoute,
   LoginRoute: LoginRoute,
   MedicinesRoute: MedicinesRoute,
+  MentalRoute: MentalRoute,
+  NotificationsRoute: NotificationsRoute,
+  OnboardingRoute: OnboardingRoute,
+  ProfileRoute: ProfileRoute,
+  ReportsRoute: ReportsRoute,
   ScannerRoute: ScannerRoute,
+  SchemesRoute: SchemesRoute,
   SettingsRoute: SettingsRoute,
   SignupRoute: SignupRoute,
   SosRoute: SosRoute,
+  WomenRoute: WomenRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
