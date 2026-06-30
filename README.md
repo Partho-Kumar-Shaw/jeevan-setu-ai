@@ -215,7 +215,7 @@ src/
 ## Clone the Repository
 
 ```bash
-git clone https://Partho-Kumar-Shaw/jeevan-setu-ai.git
+git clone git clone https://github.com/Partho-Kumar-Shaw/jeevan-setu-ai.git
 ```
 
 ## Install Dependencies
