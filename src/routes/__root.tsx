@@ -84,7 +84,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
           "AI-powered healthcare super app for India. Find hospitals, book doctors, store reports, scan prescriptions, get emergency SOS, and access Ayushman Bharat — all in one place.",
       },
       { name: "author", content: "JeevanSetu AI" },
-      { property: "og:title", content: "JeevanSetu AI — Health Super App for India" },
+      { property: "og:title", content: "JeevanSetu AI — One Platform. Every Health Service. Every Indian." },
       {
         property: "og:description",
         content:
@@ -92,6 +92,12 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
+      { name: "twitter:title", content: "JeevanSetu AI — One Platform. Every Health Service. Every Indian." },
+      { name: "description", content: "JeevanSetu Health Hub is an AI-powered super app consolidating all Indian health services into one platform." },
+      { property: "og:description", content: "JeevanSetu Health Hub is an AI-powered super app consolidating all Indian health services into one platform." },
+      { name: "twitter:description", content: "JeevanSetu Health Hub is an AI-powered super app consolidating all Indian health services into one platform." },
+      { property: "og:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/94ea0f3c-380b-4a01-ba7d-711dd3117ea0/id-preview-ab0ebfa4--d3fe749d-ac34-465a-a712-0fc4cbd19c2e.lovable.app-1782806196627.png" },
+      { name: "twitter:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/94ea0f3c-380b-4a01-ba7d-711dd3117ea0/id-preview-ab0ebfa4--d3fe749d-ac34-465a-a712-0fc4cbd19c2e.lovable.app-1782806196627.png" },
     ],
     links: [
       { rel: "stylesheet", href: appCss },
