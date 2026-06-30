@@ -67,7 +67,16 @@ function Landing() {
               </p>
             </div>
           </div>
-          <div className="flex items-center gap-3">
+          <div className="flex items-center gap-1 sm:gap-3">
+            <Link to="/features" className="hidden sm:inline-flex rounded-full px-4 py-2 text-sm font-semibold text-muted-foreground hover:text-foreground">
+              Features
+            </Link>
+            <Link to="/about" className="hidden sm:inline-flex rounded-full px-4 py-2 text-sm font-semibold text-muted-foreground hover:text-foreground">
+              About
+            </Link>
+            <Link to="/contact" className="hidden md:inline-flex rounded-full px-4 py-2 text-sm font-semibold text-muted-foreground hover:text-foreground">
+              Contact
+            </Link>
             <Link
               to="/login"
               className="hidden sm:inline-flex rounded-full px-4 py-2 text-sm font-semibold text-foreground hover:bg-muted"
@@ -75,10 +84,10 @@ function Landing() {
               Log in
             </Link>
             <Link
-              to="/signup"
+              to="/onboarding"
               className="rounded-full bg-foreground px-4 py-2 text-sm font-semibold text-background"
             >
-              Sign up free
+              Get started
             </Link>
           </div>
         </div>
