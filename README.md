@@ -78,7 +78,3 @@ See `src/README.md` for more detail on the source layout.
 2. Follow the existing code style and run `npm run lint` and `npm run format` before opening a PR.
 3. Open a descriptive pull request; include screenshots or steps to reproduce UI changes.
 
-## Questions
-If you'd like, I can:
-- Add screenshots and badges (CI, license, npm) to the README.
-- Create component-level READMEs or more detailed developer documentation.
