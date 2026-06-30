@@ -265,7 +265,7 @@ function Landing() {
         </section>
 
         <footer className="border-t border-border py-10 text-center text-xs text-muted-foreground">
-          © 2026 JeevanSetu AI · Made for Bharat · ABDM Integrated
+          © 2026 JeevanSetu AI · Made for Bharat · ABDM Integrated By <b><a href="https://github.com/partho-kumar-shaw">Partho Kumar Shaw</a></b>
         </footer>
       </main>
     </div>
