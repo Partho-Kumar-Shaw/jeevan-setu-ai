@@ -14,9 +14,23 @@
 
 ---
 
+## 🌐 Live Demo
+
+<p align="center">
+  <a href="https://jeevan-setu-ai-six.vercel.app/" target="_blank" rel="noopener noreferrer">
+    <img src="https://img.shields.io/badge/🚀_LIVE_DEMO-Visit_Platform-00B4D8?style=for-the-badge&logo=vercel&logoColor=white" alt="Live Demo"/>
+  </a>
+</p>
+
+<p align="center">
+  <em>👉 <strong><a href="https://jeevan-setu-ai-six.vercel.app/">Experience JeevanSetu AI Now</a></strong> 👈</em>
+</p>
+
+---
+
 ## 🌍 Vision
 
-Healthcare in India is often fragmented across multiple apps, hospitals, pharmacies, laboratories, and government portals. JeevanSetu AI aims to bridge this gap by creating a unified healthcare ecosystem where users can manage their complete health journey from a single platform.
+Healthcare in India is often fragmented across multiple apps, hospitals, pharmacies, laboratories, and government portals. JeevanSetu AI aims to bridge this gap by creating a unified healthcare ecosystem that integrates all essential services into one intelligent platform.
 
 Our vision is to build a future where every citizen has secure, intelligent, and seamless access to healthcare services regardless of their location or technical expertise.
 
@@ -41,7 +55,7 @@ Existing solutions solve only individual problems. There is currently no unified
 
 # 💡 Our Solution
 
-JeevanSetu AI provides a comprehensive healthcare platform that combines AI assistance, digital health records, emergency support, medicine management, healthcare analytics, and government scheme integration into a single responsive web application.
+JeevanSetu AI provides a comprehensive healthcare platform that combines AI assistance, digital health records, emergency support, medicine management, healthcare analytics, and government scheme navigation—all tailored for India's diverse population.
 
 The platform focuses on:
 
