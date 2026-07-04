@@ -1,6 +1,8 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { AppShell, PageHeader } from "@/components/AppShell";
 import { Camera, CheckCircle2, ScanLine } from "lucide-react";
+import { useRef, useState } from "react";
+import { toast } from "sonner";
 
 export const Route = createFileRoute("/scanner")({
   head: () => ({ meta: [{ title: "Medicine Scanner · JeevanSetu AI" }] }),
@@ -14,11 +16,36 @@ const meds = [
 ];
 
 function Scanner() {
+  const fileRef = useRef<HTMLInputElement>(null);
+  const [scanning, setScanning] = useState(false);
+
+  const openCamera = () => fileRef.current?.click();
+  const onFile = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const f = e.target.files?.[0];
+    if (!f) return;
+    setScanning(true);
+    toast.loading("Scanning prescription…", { id: "scan" });
+    setTimeout(() => {
+      setScanning(false);
+      toast.success("Prescription decoded", {
+        id: "scan",
+        description: `${meds.length} medicines detected from ${f.name}`,
+      });
+    }, 1400);
+  };
+
   return (
     <AppShell>
       <PageHeader
         title="Medicine Scanner"
         subtitle="Scan your prescription — AI extracts every medicine"
+      />
+      <input
+        ref={fileRef}
+        type="file"
+        accept="image/*,application/pdf"
+        className="hidden"
+        onChange={onFile}
       />
       <div className="grid gap-6 lg:grid-cols-12">
         <div className="lg:col-span-5">
@@ -31,8 +58,12 @@ function Scanner() {
               <p className="mt-1 text-sm text-white/70">
                 We'll detect medicines, dosage and duration automatically.
               </p>
-              <button className="mt-5 inline-flex items-center gap-2 self-start rounded-2xl bg-brand-secondary px-5 py-3 text-sm font-bold text-slate-950">
-                <Camera className="size-4" /> Open camera
+              <button
+                onClick={openCamera}
+                disabled={scanning}
+                className="mt-5 inline-flex items-center gap-2 self-start rounded-2xl bg-brand-secondary px-5 py-3 text-sm font-bold text-slate-950 disabled:opacity-70"
+              >
+                <Camera className="size-4" /> {scanning ? "Scanning…" : "Open camera"}
               </button>
             </div>
           </div>
@@ -80,10 +111,20 @@ function Scanner() {
               ))}
             </div>
             <div className="mt-5 flex flex-col gap-3 sm:flex-row">
-              <button className="flex-1 rounded-2xl bg-brand py-3 text-sm font-bold text-white">
+              <button
+                onClick={() =>
+                  toast.success("Order placed", {
+                    description: "Delivery in 45 mins · ₹486 · COD",
+                  })
+                }
+                className="flex-1 rounded-2xl bg-brand py-3 text-sm font-bold text-white"
+              >
                 Order all medicines — ₹486
               </button>
-              <button className="rounded-2xl bg-card px-5 py-3 text-sm font-bold ring-1 ring-border">
+              <button
+                onClick={() => toast.success("Saved to Health Locker")}
+                className="rounded-2xl bg-card px-5 py-3 text-sm font-bold ring-1 ring-border"
+              >
                 Save to Locker
               </button>
             </div>

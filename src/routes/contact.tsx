@@ -1,5 +1,7 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { Mail, MessageSquare, Phone } from "lucide-react";
+import { useState } from "react";
+import { toast } from "sonner";
 
 export const Route = createFileRoute("/contact")({
   head: () => ({ meta: [{ title: "Contact · JeevanSetu AI" }] }),
@@ -7,6 +9,8 @@ export const Route = createFileRoute("/contact")({
 });
 
 function Contact() {
+  const [form, setForm] = useState({ name: "", contact: "", subject: "", message: "" });
+  const set = (k: keyof typeof form, v: string) => setForm((f) => ({ ...f, [k]: v }));
   return (
     <div className="min-h-screen bg-surface">
       <header className="mx-auto flex max-w-7xl items-center justify-between px-6 py-6">
@@ -45,24 +49,37 @@ function Contact() {
         </div>
 
         <form
-          onSubmit={(e) => e.preventDefault()}
+          onSubmit={(e) => {
+            e.preventDefault();
+            if (!form.name || !form.contact || !form.message) {
+              toast.error("Please fill in your name, contact and message.");
+              return;
+            }
+            toast.success("Message sent!", { description: "We'll reply within 24h." });
+            setForm({ name: "", contact: "", subject: "", message: "" });
+          }}
           className="mt-10 rounded-3xl bg-card p-8 ring-1 ring-border space-y-4"
         >
           <div className="grid gap-4 sm:grid-cols-2">
-            <Field label="Your name" />
-            <Field label="Email or phone" />
+            <Field label="Your name" value={form.name} onChange={(v) => set("name", v)} />
+            <Field label="Email or phone" value={form.contact} onChange={(v) => set("contact", v)} />
           </div>
-          <Field label="Subject" />
+          <Field label="Subject" value={form.subject} onChange={(v) => set("subject", v)} />
           <label className="block">
             <span className="text-xs font-semibold uppercase tracking-widest text-muted-foreground">
               Message
             </span>
             <textarea
               rows={5}
+              value={form.message}
+              onChange={(e) => set("message", e.target.value)}
               className="mt-1.5 w-full rounded-2xl bg-muted px-4 py-3 text-sm outline-none focus:ring-2 focus:ring-brand/40"
             />
           </label>
-          <button className="rounded-2xl bg-brand px-6 py-3 text-sm font-bold text-brand-foreground">
+          <button
+            type="submit"
+            className="rounded-2xl bg-brand px-6 py-3 text-sm font-bold text-brand-foreground"
+          >
             Send message
           </button>
         </form>
@@ -71,13 +88,25 @@ function Contact() {
   );
 }
 
-function Field({ label }: { label: string }) {
+function Field({
+  label,
+  value,
+  onChange,
+}: {
+  label: string;
+  value: string;
+  onChange: (v: string) => void;
+}) {
   return (
     <label className="block">
       <span className="text-xs font-semibold uppercase tracking-widest text-muted-foreground">
         {label}
       </span>
-      <input className="mt-1.5 w-full rounded-2xl bg-muted px-4 py-3 text-sm outline-none focus:ring-2 focus:ring-brand/40" />
+      <input
+        value={value}
+        onChange={(e) => onChange(e.target.value)}
+        className="mt-1.5 w-full rounded-2xl bg-muted px-4 py-3 text-sm outline-none focus:ring-2 focus:ring-brand/40"
+      />
     </label>
   );
 }

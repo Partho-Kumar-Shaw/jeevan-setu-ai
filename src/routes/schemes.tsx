@@ -1,6 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { AppShell, PageHeader } from "@/components/AppShell";
 import { CheckCircle2, ShieldCheck } from "lucide-react";
+import { toast } from "sonner";
 
 export const Route = createFileRoute("/schemes")({
   head: () => ({ meta: [{ title: "Government Schemes · JeevanSetu AI" }] }),
@@ -55,7 +56,10 @@ function Schemes() {
               Under PM-JAY · 25,000+ empanelled hospitals · cashless treatment.
             </p>
           </div>
-          <button className="rounded-2xl bg-white px-6 py-3 text-sm font-bold text-emerald-700">
+          <button
+            onClick={() => toast.success("Ayushman card ready", { description: "Saved to Health Locker" })}
+            className="rounded-2xl bg-white px-6 py-3 text-sm font-bold text-emerald-700"
+          >
             View Ayushman Card
           </button>
         </div>
@@ -88,10 +92,16 @@ function Schemes() {
               </div>
               <p className="mt-3 text-sm text-muted-foreground">{s.desc}</p>
               <div className="mt-4 flex flex-wrap gap-2">
-                <button className="rounded-xl bg-foreground px-4 py-2 text-xs font-bold text-background">
+                <button
+                  onClick={() => toast(`${s.n}`, { description: "Opening step-by-step application guide…" })}
+                  className="rounded-xl bg-foreground px-4 py-2 text-xs font-bold text-background"
+                >
                   How to apply
                 </button>
-                <button className="rounded-xl bg-muted px-4 py-2 text-xs font-bold">
+                <button
+                  onClick={() => toast.success(`Eligibility checked for ${s.n}`, { description: s.you })}
+                  className="rounded-xl bg-muted px-4 py-2 text-xs font-bold"
+                >
                   Check eligibility
                 </button>
               </div>

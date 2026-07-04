@@ -2,6 +2,7 @@ import { createFileRoute } from "@tanstack/react-router";
 import { AppShell, PageHeader } from "@/components/AppShell";
 import { Hospital, MapPin, Star } from "lucide-react";
 import { useState } from "react";
+import { toast } from "sonner";
 
 export const Route = createFileRoute("/hospitals")({
   head: () => ({ meta: [{ title: "Hospitals · JeevanSetu AI" }] }),
@@ -122,7 +123,14 @@ function Hospitals() {
                     ))}
                   </div>
                 </div>
-                <button className="shrink-0 rounded-xl bg-brand px-4 py-2 text-xs font-bold text-white">
+                <button
+                  onClick={() =>
+                    toast.success(`Navigating to ${h.name}`, {
+                      description: `${h.dist} · ${h.icu} ICU beds free`,
+                    })
+                  }
+                  className="shrink-0 rounded-xl bg-brand px-4 py-2 text-xs font-bold text-white"
+                >
                   Directions
                 </button>
               </div>

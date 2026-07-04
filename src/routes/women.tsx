@@ -2,6 +2,7 @@ import { createFileRoute } from "@tanstack/react-router";
 import { AppShell, PageHeader, GradientCard } from "@/components/AppShell";
 import { Calendar, Droplet, Flower2, Heart, Sparkles } from "lucide-react";
 import { motion } from "framer-motion";
+import { toast } from "sonner";
 
 export const Route = createFileRoute("/women")({
   head: () => ({ meta: [{ title: "Women's Health · JeevanSetu AI" }] }),
@@ -28,10 +29,18 @@ function Women() {
               Your next period is expected in 14 days. Track symptoms below.
             </p>
             <div className="mt-6 flex flex-wrap gap-3">
-              <button className="rounded-full bg-white px-5 py-2 text-sm font-bold text-rose-600">
+              <button
+                onClick={() => toast.success("Symptom logged for today")}
+                className="rounded-full bg-white px-5 py-2 text-sm font-bold text-rose-600"
+              >
                 Log symptoms
               </button>
-              <button className="rounded-full bg-white/20 px-5 py-2 text-sm font-bold backdrop-blur">
+              <button
+                onClick={() =>
+                  toast("Next period expected", { description: "In 14 days · high accuracy" })
+                }
+                className="rounded-full bg-white/20 px-5 py-2 text-sm font-bold backdrop-blur"
+              >
                 View predictions
               </button>
             </div>

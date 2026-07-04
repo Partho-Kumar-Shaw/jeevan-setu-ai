@@ -2,6 +2,7 @@ import { createFileRoute } from "@tanstack/react-router";
 import { AppShell, PageHeader } from "@/components/AppShell";
 import { Droplets, Dumbbell, Flame, Moon, Salad } from "lucide-react";
 import { motion } from "framer-motion";
+import { toast } from "sonner";
 
 export const Route = createFileRoute("/lifestyle")({
   head: () => ({ meta: [{ title: "Lifestyle · JeevanSetu AI" }] }),
@@ -105,7 +106,10 @@ function Lifestyle() {
             <p className="mt-1 text-sm text-white/85">
               45 min · Functional strength · Beginner
             </p>
-            <button className="mt-4 rounded-xl bg-white px-5 py-2 text-sm font-bold text-rose-600">
+            <button
+              onClick={() => toast.success("Workout started", { description: "45 min · Functional strength" })}
+              className="mt-4 rounded-xl bg-white px-5 py-2 text-sm font-bold text-rose-600"
+            >
               Start now
             </button>
           </div>

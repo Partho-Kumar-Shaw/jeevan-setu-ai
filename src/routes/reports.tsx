@@ -2,6 +2,8 @@ import { createFileRoute } from "@tanstack/react-router";
 import { AppShell, PageHeader } from "@/components/AppShell";
 import { FileUp, Sparkles, CheckCircle2, AlertTriangle } from "lucide-react";
 import { motion } from "framer-motion";
+import { useRef } from "react";
+import { toast } from "sonner";
 
 export const Route = createFileRoute("/reports")({
   head: () => ({ meta: [{ title: "AI Report Analyzer · JeevanSetu AI" }] }),
@@ -18,17 +20,34 @@ const findings = [
 ];
 
 function Reports() {
+  const fileRef = useRef<HTMLInputElement>(null);
+  const onFile = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const f = e.target.files?.[0];
+    if (!f) return;
+    toast.loading("Analyzing report…", { id: "rpt" });
+    setTimeout(
+      () =>
+        toast.success("Analysis complete", {
+          id: "rpt",
+          description: `${f.name} · 6 markers extracted`,
+        }),
+      1200,
+    );
+    e.target.value = "";
+  };
   return (
     <AppShell>
       <PageHeader
         title="AI Report Analyzer"
         subtitle="Upload any lab report — get a plain-language explanation in seconds"
       />
+      <input ref={fileRef} type="file" accept=".pdf,image/*" className="hidden" onChange={onFile} />
       <div className="grid gap-6 lg:grid-cols-12">
         <div className="lg:col-span-5 space-y-4">
           <motion.div
             whileHover={{ y: -2 }}
-            className="relative overflow-hidden rounded-3xl border-2 border-dashed border-brand/30 bg-gradient-to-br from-brand/5 to-brand-secondary/5 p-10 text-center"
+            onClick={() => fileRef.current?.click()}
+            className="relative cursor-pointer overflow-hidden rounded-3xl border-2 border-dashed border-brand/30 bg-gradient-to-br from-brand/5 to-brand-secondary/5 p-10 text-center"
           >
             <div className="mx-auto grid size-16 place-items-center rounded-2xl bg-brand text-white shadow-lg shadow-brand/30">
               <FileUp className="size-7" />
@@ -37,7 +56,14 @@ function Reports() {
             <p className="mt-1 text-xs text-muted-foreground">
               PDF, JPG, PNG · max 10 MB · 100% private
             </p>
-            <button className="mt-5 rounded-xl bg-brand px-5 py-2.5 text-sm font-bold text-white">
+            <button
+              type="button"
+              onClick={(e) => {
+                e.stopPropagation();
+                fileRef.current?.click();
+              }}
+              className="mt-5 rounded-xl bg-brand px-5 py-2.5 text-sm font-bold text-white"
+            >
               Browse files
             </button>
           </motion.div>
@@ -51,6 +77,7 @@ function Reports() {
                 (r) => (
                   <button
                     key={r}
+                    onClick={() => toast(r, { description: "Opening AI summary…" })}
                     className="w-full rounded-xl bg-muted px-3 py-2.5 text-left hover:bg-accent"
                   >
                     {r}
@@ -60,6 +87,7 @@ function Reports() {
             </div>
           </div>
         </div>
+
 
         <div className="lg:col-span-7 space-y-4">
           <div className="rounded-3xl bg-gradient-to-br from-brand to-brand-secondary p-6 text-white">

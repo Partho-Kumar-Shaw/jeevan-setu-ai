@@ -1,6 +1,8 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { AppShell } from "@/components/AppShell";
 import { MapPin, PhoneCall, Siren, Users } from "lucide-react";
+import { useEffect, useState } from "react";
+import { toast } from "sonner";
 
 export const Route = createFileRoute("/sos")({
   head: () => ({ meta: [{ title: "Emergency SOS · JeevanSetu AI" }] }),
@@ -8,6 +10,42 @@ export const Route = createFileRoute("/sos")({
 });
 
 function SOS() {
+  const [countdown, setCountdown] = useState<number | null>(null);
+  const [dispatched, setDispatched] = useState(false);
+
+  useEffect(() => {
+    if (countdown === null) return;
+    if (countdown === 0) {
+      setDispatched(true);
+      toast.success("Ambulance dispatched", {
+        description: "Live location shared with family. ETA 8 mins.",
+      });
+      setCountdown(null);
+      return;
+    }
+    const t = setTimeout(() => setCountdown((c) => (c ?? 1) - 1), 1000);
+    return () => clearTimeout(t);
+  }, [countdown]);
+
+  const trigger = () => {
+    if (countdown !== null) return;
+    setDispatched(false);
+    setCountdown(5);
+    toast("SOS starting in 5s — tap cancel to abort", {
+      action: {
+        label: "Cancel",
+        onClick: () => {
+          setCountdown(null);
+          toast.info("SOS cancelled");
+        },
+      },
+    });
+  };
+
+  const call = (name: string) => {
+    toast.success(`Calling ${name}…`, { description: "Connecting on primary line" });
+  };
+
   return (
     <AppShell>
       <div className="mx-auto max-w-4xl">
@@ -19,11 +57,16 @@ function SOS() {
             Emergency SOS
           </h1>
           <div className="my-10 flex justify-center">
-            <button className="relative grid size-48 place-items-center rounded-full bg-white text-emergency shadow-2xl ring-8 ring-white/20 transition-transform active:scale-95">
+            <button
+              onClick={trigger}
+              className="relative grid size-48 place-items-center rounded-full bg-white text-emergency shadow-2xl ring-8 ring-white/20 transition-transform active:scale-95"
+            >
               <div className="absolute inset-0 animate-ping rounded-full bg-white/40" />
               <div className="relative grid place-items-center">
                 <Siren className="size-14" />
-                <span className="mt-1 text-sm font-extrabold tracking-widest">PRESS</span>
+                <span className="mt-1 text-sm font-extrabold tracking-widest">
+                  {countdown !== null ? countdown : dispatched ? "SENT" : "PRESS"}
+                </span>
               </div>
             </button>
           </div>
@@ -59,7 +102,10 @@ function SOS() {
                   <span className="rounded-full bg-card px-2.5 py-1 text-[10px] font-bold text-muted-foreground ring-1 ring-border">
                     {tag}
                   </span>
-                  <button className="grid size-9 place-items-center rounded-full bg-emergency text-white">
+                  <button
+                    onClick={() => call(n)}
+                    className="grid size-9 place-items-center rounded-full bg-emergency text-white"
+                  >
                     <PhoneCall className="size-4" />
                   </button>
                 </div>

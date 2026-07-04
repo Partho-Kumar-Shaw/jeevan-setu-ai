@@ -1,6 +1,6 @@
-import { Link, useRouterState } from "@tanstack/react-router";
+import { Link, useNavigate, useRouterState } from "@tanstack/react-router";
 import { motion } from "framer-motion";
-import type { ReactNode } from "react";
+import { useMemo, useState, type ReactNode } from "react";
 import { useTheme } from "@/hooks/use-theme";
 import {
   Activity,
@@ -81,6 +81,20 @@ const groups: { label: string; items: { to: string; label: string; icon: typeof 
 export function AppShell({ children }: { children: ReactNode }) {
   const pathname = useRouterState({ select: (s) => s.location.pathname });
   const { theme, toggle } = useTheme();
+  const navigate = useNavigate();
+  const [query, setQuery] = useState("");
+  const [open, setOpen] = useState(false);
+
+  const allItems = useMemo(() => groups.flatMap((g) => g.items), []);
+  const results = useMemo(
+    () =>
+      query.trim()
+        ? allItems
+            .filter((i) => i.label.toLowerCase().includes(query.toLowerCase()))
+            .slice(0, 6)
+        : [],
+    [query, allItems],
+  );
 
   return (
     <div className="min-h-screen bg-surface">
@@ -151,18 +165,53 @@ export function AppShell({ children }: { children: ReactNode }) {
                 </div>
                 <span className="font-bold">JeevanSetu</span>
               </Link>
-              <div className="hidden md:flex flex-1 max-w-xl">
-                <div className="flex w-full items-center gap-2 rounded-2xl bg-muted px-3 py-2 ring-1 ring-transparent focus-within:ring-brand/40">
+              <div className="hidden md:flex flex-1 max-w-xl relative">
+                <form
+                  onSubmit={(e) => {
+                    e.preventDefault();
+                    if (results[0]) {
+                      navigate({ to: results[0].to });
+                      setQuery("");
+                      setOpen(false);
+                    }
+                  }}
+                  className="flex w-full items-center gap-2 rounded-2xl bg-muted px-3 py-2 ring-1 ring-transparent focus-within:ring-brand/40"
+                >
                   <Search className="size-4 text-muted-foreground" />
                   <input
                     type="text"
+                    value={query}
+                    onChange={(e) => { setQuery(e.target.value); setOpen(true); }}
+                    onFocus={() => setOpen(true)}
+                    onBlur={() => setTimeout(() => setOpen(false), 150)}
                     placeholder="Search doctors, medicines, schemes…"
                     className="flex-1 bg-transparent text-sm outline-none"
                   />
                   <kbd className="hidden md:inline rounded bg-card px-1.5 py-0.5 text-[10px] font-bold text-muted-foreground ring-1 ring-border">
-                    ⌘K
+                    ↵
                   </kbd>
-                </div>
+                </form>
+                {open && results.length > 0 && (
+                  <div className="absolute top-full left-0 right-0 mt-2 rounded-2xl bg-card ring-1 ring-border shadow-xl overflow-hidden z-50">
+                    {results.map((r) => {
+                      const Icon = r.icon;
+                      return (
+                        <button
+                          key={r.to}
+                          onMouseDown={() => {
+                            navigate({ to: r.to });
+                            setQuery("");
+                            setOpen(false);
+                          }}
+                          className="flex w-full items-center gap-3 px-4 py-2.5 text-sm hover:bg-muted text-left"
+                        >
+                          <Icon className="size-4 text-brand" />
+                          {r.label}
+                        </button>
+                      );
+                    })}
+                  </div>
+                )}
               </div>
               <div className="flex items-center gap-2">
                 <Link

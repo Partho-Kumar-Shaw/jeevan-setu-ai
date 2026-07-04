@@ -2,6 +2,7 @@ import { createFileRoute } from "@tanstack/react-router";
 import { AppShell, PageHeader, GradientCard } from "@/components/AppShell";
 import { Brain, Headphones, MessageCircleHeart, Wind } from "lucide-react";
 import { motion } from "framer-motion";
+import { toast } from "sonner";
 
 export const Route = createFileRoute("/mental")({
   head: () => ({ meta: [{ title: "Mental Wellness · JeevanSetu AI" }] }),
@@ -89,7 +90,10 @@ function Mental() {
                 "I notice you've been feeling overwhelmed at work. Would you like a quick grounding
                 exercise?"
               </div>
-              <button className="w-full rounded-2xl bg-foreground py-2.5 text-sm font-bold text-background">
+              <button
+                onClick={() => toast.success("Session started", { description: "Grounding · 5 minutes" })}
+                className="w-full rounded-2xl bg-foreground py-2.5 text-sm font-bold text-background"
+              >
                 Start session
               </button>
             </div>
@@ -107,7 +111,10 @@ function Mental() {
                     className="flex items-center justify-between rounded-xl bg-muted p-3"
                   >
                     <span>{s}</span>
-                    <button className="rounded-lg bg-brand px-3 py-1 text-xs font-bold text-white">
+                    <button
+                      onClick={() => toast.success(`Booked: ${s}`)}
+                      className="rounded-lg bg-brand px-3 py-1 text-xs font-bold text-white"
+                    >
                       Book
                     </button>
                   </div>
@@ -123,7 +130,10 @@ function Mental() {
             <p className="mt-1 text-xs text-muted-foreground">
               24×7 free, confidential helpline.
             </p>
-            <button className="mt-3 w-full rounded-xl bg-emergency py-2 text-xs font-bold text-white">
+            <button
+              onClick={() => toast.success("Connecting to helpline…", { description: "1860-2662-345 · iCall" })}
+              className="mt-3 w-full rounded-xl bg-emergency py-2 text-xs font-bold text-white"
+            >
               Call now · 1860-2662-345
             </button>
           </div>

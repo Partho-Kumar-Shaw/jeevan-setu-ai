@@ -1,12 +1,40 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { AppShell, PageHeader } from "@/components/AppShell";
+import { useState } from "react";
+import { toast } from "sonner";
 
 export const Route = createFileRoute("/settings")({
   head: () => ({ meta: [{ title: "Settings · JeevanSetu AI" }] }),
   component: Settings,
 });
 
+const languages = ["English", "हिन्दी", "தமிழ்", "తెలుగు", "বাংলা", "मराठी", "ગુજરાતી", "ಕನ್ನಡ"];
+
 function Settings() {
+  const [lang, setLang] = useState("English");
+  const [toggles, setToggles] = useState<Record<string, boolean>>({
+    "Voice navigation": true,
+    "Large text": true,
+    "High contrast": false,
+    "Screen reader support": true,
+    "Medicine reminders": true,
+    "Appointment alerts": true,
+    "Lab report ready": true,
+    "Family health alerts": true,
+    "Vaccination due": true,
+    "Insurance renewal": false,
+    "Share anonymous data for research": false,
+    "Allow family caregivers": true,
+  });
+
+  const flip = (label: string) => {
+    setToggles((t) => {
+      const next = { ...t, [label]: !t[label] };
+      toast(`${label} ${next[label] ? "enabled" : "disabled"}`);
+      return next;
+    });
+  };
+
   return (
     <AppShell>
       <PageHeader title="Settings" subtitle="Profile, language, accessibility & privacy" />
@@ -18,7 +46,10 @@ function Settings() {
             </div>
             <h3 className="mt-3 text-lg font-bold">Anjali Sharma</h3>
             <p className="text-xs text-muted-foreground">ABHA · 14-3344-5566-7788</p>
-            <button className="mt-4 rounded-xl bg-muted px-4 py-2 text-xs font-bold">
+            <button
+              onClick={() => toast("Profile editor coming soon")}
+              className="mt-4 rounded-xl bg-muted px-4 py-2 text-xs font-bold"
+            >
               Edit profile
             </button>
           </div>
@@ -33,42 +64,55 @@ function Settings() {
 
         <div className="lg:col-span-2 space-y-4">
           <Card title="Accessibility">
-            <Toggle label="Voice navigation" on />
-            <Toggle label="Large text" on />
-            <Toggle label="High contrast" />
-            <Toggle label="Screen reader support" on />
+            {["Voice navigation", "Large text", "High contrast", "Screen reader support"].map(
+              (l) => (
+                <Toggle key={l} label={l} on={toggles[l]} onToggle={() => flip(l)} />
+              ),
+            )}
           </Card>
           <Card title="Language">
             <div className="flex flex-wrap gap-2">
-              {["English", "हिन्दी", "தமிழ்", "తెలుగు", "বাংলা", "मराठी", "ગુજરાતી", "ಕನ್ನಡ"].map(
-                (l, i) => (
-                  <button
-                    key={l}
-                    className={
-                      "rounded-full px-4 py-1.5 text-xs font-bold " +
-                      (i === 0
-                        ? "bg-brand text-white"
-                        : "bg-muted text-muted-foreground")
-                    }
-                  >
-                    {l}
-                  </button>
-                ),
-              )}
+              {languages.map((l) => (
+                <button
+                  key={l}
+                  onClick={() => {
+                    setLang(l);
+                    toast.success(`Language set to ${l}`);
+                  }}
+                  className={
+                    "rounded-full px-4 py-1.5 text-xs font-bold " +
+                    (lang === l ? "bg-brand text-white" : "bg-muted text-muted-foreground")
+                  }
+                >
+                  {l}
+                </button>
+              ))}
             </div>
           </Card>
           <Card title="Notifications">
-            <Toggle label="Medicine reminders" on />
-            <Toggle label="Appointment alerts" on />
-            <Toggle label="Lab report ready" on />
-            <Toggle label="Family health alerts" on />
-            <Toggle label="Vaccination due" on />
-            <Toggle label="Insurance renewal" />
+            {[
+              "Medicine reminders",
+              "Appointment alerts",
+              "Lab report ready",
+              "Family health alerts",
+              "Vaccination due",
+              "Insurance renewal",
+            ].map((l) => (
+              <Toggle key={l} label={l} on={toggles[l]} onToggle={() => flip(l)} />
+            ))}
           </Card>
           <Card title="Privacy & data">
-            <Toggle label="Share anonymous data for research" />
-            <Toggle label="Allow family caregivers" on />
-            <button className="mt-2 text-xs font-bold text-emergency">
+            {["Share anonymous data for research", "Allow family caregivers"].map((l) => (
+              <Toggle key={l} label={l} on={toggles[l]} onToggle={() => flip(l)} />
+            ))}
+            <button
+              onClick={() =>
+                toast.success("Data export requested", {
+                  description: "You'll receive a download link via email within 24h.",
+                })
+              }
+              className="mt-2 text-xs font-bold text-emergency"
+            >
               Download all my data
             </button>
           </Card>
@@ -96,11 +140,20 @@ function Card({ title, children }: { title: string; children: React.ReactNode })
   );
 }
 
-function Toggle({ label, on }: { label: string; on?: boolean }) {
+function Toggle({
+  label,
+  on,
+  onToggle,
+}: {
+  label: string;
+  on: boolean;
+  onToggle: () => void;
+}) {
   return (
     <div className="flex items-center justify-between">
       <span className="text-sm">{label}</span>
-      <div
+      <button
+        onClick={onToggle}
         className={
           "h-6 w-11 rounded-full p-0.5 transition-colors " +
           (on ? "bg-brand" : "bg-muted")
@@ -112,7 +165,7 @@ function Toggle({ label, on }: { label: string; on?: boolean }) {
             (on ? "translate-x-5" : "")
           }
         />
-      </div>
+      </button>
     </div>
   );
 }
