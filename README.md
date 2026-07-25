@@ -1,77 +1,96 @@
 # Jeevan Setu AI
 
-**Bridging the gap between digital and healthcare through intelligent AI solutions**
+**A modern, intelligent healthcare platform built with cutting-edge frontend technologies**
 
-Jeevan Setu AI is a comprehensive platform designed to leverage artificial intelligence and machine learning to enhance healthcare accessibility, diagnosis, and patient care delivery. The platform aims to create a seamless bridge (Setu) between patients, healthcare providers, and medical resources using cutting-edge AI technologies.
+Jeevan Setu AI is a comprehensive frontend-focused web application designed to provide AI-powered healthcare solutions. The platform leverages React, TypeScript, and modern UI frameworks to deliver a seamless user experience for health assessment, patient care management, and healthcare provider connectivity.
+
+🌐 **Live Demo**: [jeevan-setu-ai-six.vercel.app](https://jeevan-setu-ai-six.vercel.app)
 
 ## 🎯 Project Vision
 
 Our mission is to democratize healthcare by:
-- Providing intelligent health assessment tools accessible to everyone
-- Enabling early disease detection through AI-powered analysis
+- Providing intelligent, accessible health assessment tools through an intuitive web interface
+- Enabling early disease detection through AI-powered symptom analysis
 - Connecting patients with appropriate healthcare resources
-- Empowering healthcare providers with data-driven insights
-- Making healthcare more efficient, affordable, and equitable
+- Delivering data-driven health insights with beautiful, responsive UI
+- Making healthcare information accessible, affordable, and equitable
 
 ## ✨ Key Features
 
-### 🏥 Health Assessment
-- **AI-Powered Symptom Analysis**: Intelligent symptom checker that analyzes user inputs to provide preliminary health insights
-- **Medical History Tracking**: Secure digital health records management
-- **Risk Assessment**: Personalized health risk evaluation based on medical history and demographics
+### 🏥 Health Assessment Interface
+- **AI-Powered Symptom Checker**: Interactive form-based symptom analyzer with real-time validation
+- **Medical History Tracking**: Secure digital health records management UI
+- **Risk Assessment Dashboard**: Personalized health risk evaluation visualizations
+- **Health Metrics Dashboard**: Beautiful charts and visualizations for health tracking
 
-### 🤖 Machine Learning Capabilities
-- **Predictive Analytics**: ML models for disease prediction and health trend analysis
-- **Pattern Recognition**: Identifies health patterns and anomalies in patient data
-- **Natural Language Processing**: Understands and processes medical queries in natural language
+### 🎨 Modern UI/UX
+- **Responsive Design**: Fully responsive interface built with Tailwind CSS
+- **Accessible Components**: WCAG-compliant UI components using Radix UI primitives
+- **Dark/Light Mode**: Seamless theme switching for user comfort
+- **Smooth Animations**: Elegant animations powered by Framer Motion
 
-### 🔗 Integration & Connectivity
-- **Healthcare Provider Network**: Connect patients with verified healthcare providers
-- **Electronic Health Records (EHR)**: Seamless integration with existing medical systems
-- **Telemedicine Support**: Facilitate remote consultations between patients and doctors
+### 📊 Analytics & Visualization
+- **Health Dashboards**: Interactive charts using Recharts for health metrics visualization
+- **Data Tables**: Advanced table components with sorting, filtering, and pagination
+- **Real-time Updates**: Live data synchronization using React Query
+- **Personalized Recommendations**: AI-driven health insights with beautiful presentation
 
-### 📊 Analytics & Insights
-- **Health Dashboards**: Visual representation of health metrics and trends
-- **Personalized Recommendations**: AI-driven health and wellness recommendations
-- **Population Health Analytics**: Aggregate insights for public health initiatives
+### 🔗 Provider Network Interface
+- **Provider Directory**: Search and filter healthcare providers by specialty and location
+- **Appointment Booking**: Intuitive booking interface for scheduling consultations
+- **Communication Hub**: Integrated messaging interface for patient-provider communication
+- **Telemedicine Support**: Video consultation interface
 
 ### 🔐 Security & Privacy
-- **HIPAA Compliance**: Adherence to healthcare data protection standards
-- **End-to-End Encryption**: Secure data transmission and storage
-- **User Privacy Controls**: Granular permission management for health data access
+- **Client-side Validation**: Zod schema validation for all user inputs
+- **Secure State Management**: Protected sensitive data handling with React hooks
+- **Environment Configuration**: Secure API endpoint management
+- **User Privacy Controls**: Granular permission UI for health data access
 
 ## 🛠️ Technology Stack
 
-### Backend
-- **Framework**: [Specify your backend framework - e.g., Node.js/Express, Python/Django, etc.]
-- **Database**: [Specify database - e.g., PostgreSQL, MongoDB, etc.]
-- **ML/AI**: TensorFlow, PyTorch, Scikit-learn
-- **APIs**: RESTful APIs with GraphQL support
+### Core Frontend
+- **Framework**: React 19.2.0 with modern hooks and concurrent features
+- **Routing**: TanStack Router 1.170.16 with file-based routing
+- **State Management**: TanStack React Query 5.101.1 for server state, React Context API for UI state
+- **Language**: TypeScript 5.8.3 for type safety
+- **Build Tool**: Vite 8.0.16 with hot module replacement
 
-### Frontend
-- **Framework**: [Specify frontend framework - e.g., React, Vue, Angular, etc.]
-- **UI Components**: [Material-UI, Bootstrap, etc.]
-- **State Management**: [Redux, Context API, etc.]
+### UI & Styling
+- **Component Library**: Radix UI (15+ accessible component primitives)
+- **Styling Framework**: Tailwind CSS 4.2.1 with Vite integration
+- **Icon Library**: Lucide React 0.575.0
+- **Form Handling**: React Hook Form 7.71.2 + Zod 3.24.2
+- **UI Command Palette**: cmdk 1.1.1
 
-### Infrastructure
-- **Cloud Platform**: [AWS/GCP/Azure - specify if applicable]
-- **Containerization**: Docker & Kubernetes
-- **CI/CD**: GitHub Actions / Jenkins / GitLab CI
+### Visualization & Animation
+- **Charts**: Recharts 2.15.4 for data visualization
+- **Animations**: Framer Motion 12.42.0 for smooth UI transitions
+- **Carousels**: Embla Carousel React 8.6.0
+- **Resizable Panels**: react-resizable-panels 4.6.5
 
-### AI/ML
-- **NLP**: NLTK, spaCy, Transformers (Hugging Face)
-- **Computer Vision**: OpenCV, Pillow
-- **Data Processing**: Pandas, NumPy
-- **Model Training**: Jupyter Notebooks
+### Utilities & Integrations
+- **Date Handling**: date-fns 4.1.0
+- **Notification System**: Sonner 2.0.7 for toast notifications
+- **OTP Input**: input-otp 1.4.2
+- **Drawer Component**: vaul 1.1.2
+- **CSS Utilities**: clsx 2.1.1, tailwind-merge 3.5.0
+- **CLI Utility**: cmdk for command palette
+
+### Development Tools
+- **Linting**: ESLint 9.32.0 with TypeScript support
+- **Code Formatting**: Prettier 3.7.3
+- **Package Manager**: Bun (see bunfig.toml)
+- **Type Safety**: TypeScript ESLint 8.56.1
 
 ## 📋 Prerequisites
 
 Before you begin, ensure you have the following installed:
-- Python 3.8 or higher
-- Node.js 14.0 or higher (if using Node.js backend)
-- Git
-- Docker (optional, for containerized deployment)
-- PostgreSQL or MongoDB (depending on database choice)
+
+- **Node.js**: 18.0 or higher (or Bun 1.0+)
+- **npm** or **Bun**: Latest version for package management
+- **Git**: For version control
+- **Modern Browser**: Chrome, Firefox, Safari, or Edge (latest versions)
 
 ## 🚀 Getting Started
 
@@ -83,200 +102,297 @@ cd jeevan-setu-ai
 
 ### 2. Install Dependencies
 
-**Backend Setup:**
+Using npm:
 ```bash
-cd backend
-pip install -r requirements.txt  # For Python backend
-# OR
-npm install                       # For Node.js backend
-```
-
-**Frontend Setup:**
-```bash
-cd frontend
 npm install
 ```
 
+Or using Bun (recommended for faster installation):
+```bash
+bun install
+```
+
 ### 3. Environment Configuration
-Create a `.env` file in the root directory:
+
+Create a `.env.local` file in the root directory:
+
 ```env
-# Database
-DATABASE_URL=postgresql://user:password@localhost:5432/jeevan_setu
-MONGODB_URI=mongodb://localhost:27017/jeevan_setu
+# API Configuration
+VITE_API_BASE_URL=http://localhost:3000
+VITE_API_TIMEOUT=30000
 
-# API Keys
-OPENAI_API_KEY=your_api_key_here
-MEDICAL_API_KEY=your_medical_api_key
+# Feature Flags
+VITE_ENABLE_ANALYTICS=true
+VITE_ENABLE_NOTIFICATIONS=true
 
-# JWT & Security
-JWT_SECRET=your_jwt_secret_key
-JWT_EXPIRY=7d
+# AI/LLM Integration (Optional)
+VITE_OPENAI_API_KEY=your_api_key_here
+VITE_MEDICAL_API_KEY=your_medical_api_key
 
-# Email Configuration
-SMTP_HOST=smtp.gmail.com
-SMTP_PORT=587
-SMTP_USER=your_email@gmail.com
-SMTP_PASS=your_email_password
+# Telemedicine
+VITE_WEBRTC_STUN_SERVERS=stun:stun.l.google.com:19302
 
 # Application
-NODE_ENV=development
-PORT=5000
-FRONTEND_URL=http://localhost:3000
+VITE_APP_NAME="Jeevan Setu AI"
+VITE_APP_DESCRIPTION="Intelligent Healthcare Platform"
 ```
 
-### 4. Database Setup
+### 4. Development Server
+
+Using npm:
 ```bash
-# Create database migrations
-python manage.py migrate          # Django
-# OR
-npm run migrate                   # Node.js migrations
-
-# Seed initial data (optional)
-python manage.py seed             # Django
-npm run seed                      # Node.js
+npm run dev
 ```
 
-### 5. Run the Application
-
-**Start Backend:**
+Or using Bun:
 ```bash
-# Python
-python manage.py runserver
-
-# Node.js
-npm start
+bun run dev
 ```
 
-**Start Frontend:**
+The application will be available at `http://localhost:5173`
+
+### 5. Build for Production
+
 ```bash
-cd frontend
-npm start
+npm run build
 ```
 
-The application will be available at `http://localhost:3000`
+This generates an optimized production build in the `dist/` directory.
+
+### 6. Preview Production Build
+
+```bash
+npm run preview
+```
 
 ## 📁 Project Structure
 
 ```
 jeevan-setu-ai/
-├── backend/
-│   ├── app/
-│   │   ├── models/
-│   │   ├── routes/
-│   │   ├── services/
-│   │   ├── middleware/
-│   │   └── utils/
-│   ├── ml_models/
-│   │   ├── symptom_checker/
-│   │   ├── disease_predictor/
-│   │   └── nlp/
-│   ├── tests/
-│   ├── requirements.txt
-│   └── config.py
-├── frontend/
-│   ├── src/
-│   │   ├── components/
-│   │   ├── pages/
-│   │   ├── services/
-│   │   ├── hooks/
-│   │   ├── styles/
-│   │   └── App.js
-│   ├── public/
-│   ├── package.json
-│   └── .env.example
-├── docs/
-│   ├── API_DOCUMENTATION.md
-│   ├── ARCHITECTURE.md
-│   └── DEPLOYMENT.md
-├── docker-compose.yml
+├── src/
+│   ├── routes/                          # File-based routing (TanStack Router)
+│   │   ├── __root.tsx                   # Root layout wrapper
+│   │   ├── index.tsx                    # Home page (/)
+│   │   ├── about.tsx                    # About page
+│   │   ├── health/
+│   │   │   ├── index.tsx                # Health dashboard (/health)
+│   │   │   ├── assessment.tsx           # Symptom checker (/health/assessment)
+│   │   │   ├── history.tsx              # Medical history (/health/history)
+│   │   │   └── $id.tsx                  # Individual health record detail
+│   │   ├── providers/
+│   │   │   ├── index.tsx                # Provider directory (/providers)
+│   │   │   ├── search.tsx               # Provider search (/providers/search)
+│   │   │   └── $id.tsx                  # Provider details (/providers/:id)
+│   │   ├── appointments/
+│   │   │   ├── index.tsx                # My appointments (/appointments)
+│   │   │   └── book.tsx                 # Book appointment (/appointments/book)
+│   │   ├── profile.tsx                  # User profile (/profile)
+│   │   ├── settings.tsx                 # Settings (/settings)
+│   │   └── _layout.tsx                  # Shared layout
+│   │
+│   ├── components/                      # Reusable React components
+│   │   ├── ui/                          # Radix UI wrapper components
+│   │   │   ├── button.tsx
+│   │   │   ├── card.tsx
+│   │   │   ├── dialog.tsx
+│   │   │   ├── form.tsx
+│   │   │   ├── input.tsx
+│   │   │   ├── select.tsx
+│   │   │   ├── tabs.tsx
+│   │   │   ├── alert.tsx
+│   │   │   └── [other UI components]
+│   │   ├── layout/
+│   │   │   ├── header.tsx
+│   │   │   ├── sidebar.tsx
+│   │   │   ├── footer.tsx
+│   │   │   └── navigation.tsx
+│   │   ├── health/
+│   │   │   ├── symptom-checker-form.tsx
+│   │   │   ├── health-metrics-chart.tsx
+│   │   │   ├── health-card.tsx
+│   │   │   └── risk-assessment.tsx
+│   │   ├── providers/
+│   │   │   ├── provider-card.tsx
+│   │   │   ├── provider-filter.tsx
+│   │   │   └── provider-list.tsx
+│   │   ├── common/
+│   │   │   ├── loading.tsx
+│   │   │   ├── error-boundary.tsx
+│   │   │   ├── not-found.tsx
+│   │   │   └── empty-state.tsx
+│   │   └── [feature components]
+│   │
+│   ├── services/                        # API and external service integrations
+│   │   ├── api-client.ts                # Axios/Fetch wrapper
+│   │   ├── health-service.ts            # Health endpoints
+│   │   ├── provider-service.ts          # Provider endpoints
+│   │   ├── auth-service.ts              # Authentication
+│   │   └── [domain services]
+│   │
+│   ├── hooks/                           # Custom React hooks
+│   │   ├── use-health-data.ts
+│   │   ├── use-providers.ts
+│   │   ├── use-form-validation.ts
+│   │   ├── use-local-storage.ts
+│   │   └── [custom hooks]
+│   │
+│   ├── context/                         # React Context providers
+│   │   ├── auth-context.tsx
+│   │   ├── theme-context.tsx
+│   │   └── [feature contexts]
+│   │
+│   ├── utils/                           # Utility functions
+│   │   ├── cn.ts                        # Class name utilities
+│   │   ├── format.ts                    # Data formatting
+│   │   ├── validation.ts                # Form validation schemas
+│   │   └── [utility functions]
+│   │
+│   ├── types/                           # TypeScript type definitions
+│   │   ├── health.ts
+│   │   ├── provider.ts
+│   │   ├── user.ts
+│   │   └── [domain types]
+│   │
+│   ├── styles/                          # Global styles
+│   │   ├── globals.css                  # Tailwind directives
+│   │   └── animations.css               # Custom animations
+│   │
+│   ├── App.tsx                          # Root component
+│   ├── main.tsx                         # Entry point
+│   └── routeTree.gen.ts                 # Auto-generated route tree (TanStack)
+│
+├── public/                              # Static assets
+│   ├── favicon.ico
+│   ├── logos/
+│   └── [static files]
+│
 ├── .github/
-│   └── workflows/
+│   └── workflows/                       # CI/CD pipelines
+│       ├── build.yml
+│       └── deploy.yml
+│
+├── components.json                      # shadcn component config
+├── package.json                         # Project dependencies
+├── tsconfig.json                        # TypeScript configuration
+├── vite.config.ts                       # Vite configuration
+├── tailwind.config.ts                   # Tailwind CSS configuration
+├── eslint.config.js                     # ESLint configuration
+├── .prettierrc                          # Prettier formatting
+├── bunfig.toml                          # Bun configuration
 ├── .gitignore
+├── AGENTS.md                            # Lovable AI integration notes
 ├── LICENSE
-└── README.md
+└── README.md                            # This file
 ```
 
-## 🔌 API Documentation
+## 🎨 UI Components
 
-### Health Assessment Endpoints
+The project uses **Radix UI** as the foundation for all accessible components, wrapped with Tailwind CSS styling. Key components available:
 
-**POST** `/api/health/assess`
-- Analyzes symptoms and provides preliminary assessment
-- Request body:
-  ```json
-  {
-    "symptoms": ["fever", "cough"],
-    "duration": "3 days",
-    "severity": "moderate"
-  }
-  ```
+- **Forms**: Input, Select, Checkbox, Radio, Toggle, Textarea
+- **Dialogs**: Dialog, Alert Dialog, Popover, Drawer
+- **Navigation**: Menubar, Dropdown Menu, Context Menu, Navigation Menu
+- **Data Display**: Tabs, Accordion, Carousel, Scroll Area
+- **Feedback**: Toast (via Sonner), Progress
+- **Utilities**: Avatar, Badge, Separator, Tooltip
 
-**GET** `/api/health/user/:userId`
-- Retrieves user's health profile and history
+All components are designed to be accessible and customizable through Tailwind CSS classes.
 
-**POST** `/api/health/records`
-- Saves medical records for a user
+## 🎯 Key Features Implementation
 
-### Provider Network Endpoints
+### Health Assessment Flow
+1. User fills symptom checker form with validation
+2. Form data sent to AI analysis service
+3. Real-time risk assessment displayed
+4. Historical tracking with charts
+5. Personalized recommendations shown
 
-**GET** `/api/providers/search`
-- Search for healthcare providers by specialty and location
+### Provider Discovery
+1. Search and filter providers by specialty, location, ratings
+2. View provider profiles and availability
+3. Book appointments through intuitive UI
+4. Manage appointments with reminders
 
-**POST** `/api/appointments/book`
-- Book appointments with healthcare providers
+### Dashboard
+1. View health metrics with interactive charts
+2. Track medical history
+3. Access health records
+4. Receive personalized health insights
 
-For detailed API documentation, see [API_DOCUMENTATION.md](docs/API_DOCUMENTATION.md)
+## 📱 Responsive Design
+
+The application is fully responsive and optimized for:
+- **Desktop**: 1920px and above
+- **Tablet**: 768px to 1919px
+- **Mobile**: Below 768px
+
+Tailwind CSS breakpoints are used throughout for responsive layouts.
+
+## 🔐 Security Practices
+
+- **Input Validation**: Zod schema validation for all forms
+- **Type Safety**: Full TypeScript coverage
+- **Environment Variables**: Sensitive data stored in `.env.local`
+- **No Backend Secrets**: API calls properly configured
+- **CORS Handling**: Proper CORS configuration in Vite
+- **CSP Headers**: Content Security Policy for XSS protection
 
 ## 🧪 Testing
 
-### Run Unit Tests
+### Run Linting
 ```bash
-# Python
-pytest tests/
-
-# Node.js
-npm test
+npm run lint
 ```
 
-### Run Integration Tests
+### Format Code
 ```bash
-npm run test:integration
+npm run format
 ```
 
-### Generate Coverage Report
+### Build Check
 ```bash
-pytest --cov=app tests/
-npm run test:coverage
+npm run build
 ```
 
-## 🐳 Docker Deployment
+## 🚀 Deployment
 
-### Build Docker Image
+### Deploy to Vercel (Recommended)
+
+The project is configured for Vercel deployment. Push to your repository and:
+
+1. Go to [vercel.com](https://vercel.com)
+2. Import your GitHub repository
+3. Vercel auto-detects Vite configuration
+4. Deploy with one click
+
+Live demo is deployed at: [jeevan-setu-ai-six.vercel.app](https://jeevan-setu-ai-six.vercel.app)
+
+### Deploy to Netlify
+
+```bash
+npm run build
+```
+
+Deploy the `dist/` folder to Netlify.
+
+### Deploy to Docker
+
 ```bash
 docker build -t jeevan-setu-ai:latest .
-```
-
-### Run with Docker Compose
-```bash
-docker-compose up -d
-```
-
-### View Logs
-```bash
-docker-compose logs -f app
+docker run -p 3000:3000 jeevan-setu-ai:latest
 ```
 
 ## 📚 Documentation
 
-Comprehensive documentation is available in the `/docs` directory:
-- [Architecture Overview](docs/ARCHITECTURE.md)
-- [API Documentation](docs/API_DOCUMENTATION.md)
-- [Deployment Guide](docs/DEPLOYMENT.md)
-- [Contributing Guidelines](CONTRIBUTING.md)
+Key documentation files:
+- [AGENTS.md](AGENTS.md) - Lovable AI integration notes
+- [Component Usage Guide](docs/COMPONENTS.md) - How to use UI components
+- [API Integration Guide](docs/API_INTEGRATION.md) - Backend API integration
+- [Deployment Guide](docs/DEPLOYMENT.md) - Deployment options and configurations
 
 ## 🤝 Contributing
 
-We welcome contributions from developers, healthcare professionals, and AI enthusiasts. Please follow these steps:
+We welcome contributions! Here's how to get involved:
 
 1. **Fork the Repository**
    ```bash
@@ -290,8 +406,10 @@ We welcome contributions from developers, healthcare professionals, and AI enthu
 
 3. **Make Changes and Commit**
    ```bash
+   npm run format
+   npm run lint
    git add .
-   git commit -m "Add feature: description of changes"
+   git commit -m "feat: description of your feature"
    ```
 
 4. **Push to Your Fork**
@@ -300,87 +418,85 @@ We welcome contributions from developers, healthcare professionals, and AI enthu
    ```
 
 5. **Create a Pull Request**
-   - Provide a clear description of changes
+   - Provide clear description of changes
    - Reference related issues
-   - Ensure CI/CD checks pass
-
-For detailed contribution guidelines, see [CONTRIBUTING.md](CONTRIBUTING.md)
+   - Ensure linting passes
 
 ## 📋 Code Standards
 
-- **Python**: Follow PEP 8 style guide
-- **JavaScript/TypeScript**: Use ESLint configuration
-- **Comments**: Write clear, concise comments for complex logic
-- **Commits**: Use conventional commit messages (feat:, fix:, docs:, etc.)
+- **TypeScript**: Strict mode enabled, no implicit any
+- **React**: Functional components with hooks
+- **Styling**: Tailwind CSS utility classes
+- **Naming**: camelCase for variables/functions, PascalCase for components
+- **Components**: Keep components small and focused (single responsibility)
+- **Comments**: Use JSDoc for complex logic
+- **Commits**: Use conventional commits (feat:, fix:, docs:, style:, refactor:, test:, chore:)
 
-## 🔒 Security
+## 🔄 Git Workflow Notes
 
-- Never commit sensitive data (API keys, passwords, etc.)
-- Use environment variables for configuration
-- Keep dependencies updated regularly
-- Report security vulnerabilities to [security@jeevan-setu-ai.com](mailto:security@jeevan-setu-ai.com)
+This project is connected to [Lovable](https://lovable.dev) for AI-assisted development. Please avoid:
+- Force pushing
+- Rebasing/amending/squashing commits that are already pushed
+- Rewriting published git history
 
-See [SECURITY.md](SECURITY.md) for detailed security guidelines.
+Commits pushed to this branch sync back to Lovable, so keep the branch in a working state.
 
-## 📈 Performance
+## 🎯 State Management
 
-- Monitor API response times
-- Optimize database queries
-- Implement caching strategies
-- Use lazy loading for frontend components
-- Regular load testing and optimization
+### React Query (Server State)
+- Manages API data fetching
+- Caching and synchronization
+- Used for: health records, provider data, user preferences
 
-## 🤖 ML Models
+### React Context (UI State)
+- Authentication state
+- Theme/dark mode
+- Sidebar navigation state
+- Modal/dialog state
 
-### Symptom Checker Model
-- **Type**: Classification model
-- **Accuracy**: [XX%]
-- **Training Data**: [Description]
+### Local State (Component State)
+- Form inputs
+- Local UI interactions
+- Temporary data transformations
 
-### Disease Predictor
-- **Type**: Predictive model
-- **Features**: Age, medical history, symptoms, lifestyle factors
-- **Output**: Risk probability for common diseases
+## 🌐 Browser Support
 
-## 📱 Mobile Support
+- Chrome/Edge: Latest 2 versions
+- Firefox: Latest 2 versions
+- Safari: Latest 2 versions
+- Mobile browsers: iOS Safari 13+, Chrome Mobile 90+
 
-Jeevan Setu AI is designed to be mobile-responsive. Consider using:
-- Progressive Web Apps (PWA)
-- React Native for iOS/Android apps
-- Flutter for cross-platform development
+## 📊 Performance Optimizations
 
-## 🌐 Localization
-
-Currently supporting:
-- English
-- Hindi
-- [Add other languages]
-
-To add translations, update files in `/locales/` directory.
+- **Code Splitting**: TanStack Router handles automatic code splitting
+- **Lazy Loading**: React.lazy for route-based code splitting
+- **Image Optimization**: Use next-gen formats (WebP)
+- **CSS Optimization**: Tailwind purges unused styles in production
+- **Bundle Analysis**: Use `npm run build` to see bundle size
 
 ## 🗺️ Roadmap
 
-- **Q3 2024**: Initial MVP release with symptom checker
-- **Q4 2024**: Provider network integration
-- **Q1 2025**: Mobile app launch
-- **Q2 2025**: Advanced predictive analytics
-- **Q3 2025**: AI chatbot for 24/7 support
+- **Current**: MVP with symptom checker and health dashboard
+- **Q3 2025**: Provider network integration and appointment booking
+- **Q4 2025**: Telemedicine video consultation feature
+- **Q1 2026**: Mobile-optimized PWA experience
+- **Q2 2026**: Advanced health analytics and AI chatbot
+- **Q3 2026**: Multi-language support (Hindi, Spanish, etc.)
 
 ## 📊 Statistics & Metrics
 
-Track project health and contribution metrics through:
-- GitHub Issues and Pull Requests
-- Code coverage reports
-- Performance benchmarks
+Track project health through:
+- GitHub Actions for CI/CD
+- Vercel Analytics for web performance
 - User engagement metrics
+- Code coverage reports (when testing is added)
 
 ## 💬 Community & Support
 
-- **GitHub Discussions**: [Link to discussions]
-- **Slack Community**: [Invite link]
-- **Email Support**: support@jeevan-setu-ai.com
-- **Documentation Wiki**: [Link to wiki]
-- **Stack Overflow**: Tag your questions with `jeevan-setu-ai`
+- **GitHub Issues**: Report bugs and request features
+- **Discussions**: Ask questions and share ideas
+- **Email**: partho.kumar.shaw@example.com
+- **Documentation**: Check docs/ directory for detailed guides
 
 ## 📜 License
 
@@ -389,23 +505,26 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 ## 👥 Authors & Contributors
 
 - **Partho Kumar Shaw** - Project Lead & Creator
-- [Add other contributors here]
+- Built with ❤️ and powered by [Lovable](https://lovable.dev)
 
 ## 🙏 Acknowledgments
 
-- [Acknowledge libraries, frameworks, and resources used]
-- [Mention healthcare professionals who provided guidance]
-- [Credit open-source projects and communities]
+- [TanStack](https://tanstack.com/) for amazing routing and query solutions
+- [Radix UI](https://www.radix-ui.com/) for accessible component primitives
+- [Tailwind CSS](https://tailwindcss.com/) for utility-first styling
+- [React](https://react.dev/) community and ecosystem
+- All contributors and supporters of this project
 
-## 📞 Contact
+## 📞 Contact & Links
 
 For inquiries, partnerships, or feedback:
-- Email: partho.kumar.shaw@example.com
-- LinkedIn: [Your LinkedIn Profile]
-- Twitter: [@your-handle]
+- **Email**: partho.kumar.shaw@example.com
+- **GitHub**: [@Partho-Kumar-Shaw](https://github.com/Partho-Kumar-Shaw)
+- **Live Demo**: [jeevan-setu-ai-six.vercel.app](https://jeevan-setu-ai-six.vercel.app)
+- **Repository**: [github.com/Partho-Kumar-Shaw/jeevan-setu-ai](https://github.com/Partho-Kumar-Shaw/jeevan-setu-ai)
 
 ---
 
 **Made with ❤️ by Partho Kumar Shaw and the Jeevan Setu AI Community**
 
-*Last Updated: July 25, 2024*
+*Last Updated: July 25, 2026*
