@@ -326,69 +326,14 @@ The application is fully responsive and optimized for:
 - **Tablet**: 768px to 1919px
 - **Mobile**: Below 768px
 
-Tailwind CSS breakpoints are used throughout for responsive layouts.
 
-## 🔐 Security Practices
 
-- **Input Validation**: Zod schema validation for all forms
-- **Type Safety**: Full TypeScript coverage
-- **Environment Variables**: Sensitive data stored in `.env.local`
-- **No Backend Secrets**: API calls properly configured
-- **CORS Handling**: Proper CORS configuration in Vite
-- **CSP Headers**: Content Security Policy for XSS protection
-
-## 🧪 Testing
-
-### Run Linting
-```bash
-npm run lint
-```
-
-### Format Code
-```bash
-npm run format
-```
-
-### Build Check
-```bash
-npm run build
-```
 
 ## 🚀 Deployment
 
-### Deploy to Vercel (Recommended)
-
-The project is configured for Vercel deployment. Push to your repository and:
-
-1. Go to [vercel.com](https://vercel.com)
-2. Import your GitHub repository
-3. Vercel auto-detects Vite configuration
-4. Deploy with one click
 
 Live demo is deployed at: [jeevan-setu-ai-six.vercel.app](https://jeevan-setu-ai-six.vercel.app)
 
-### Deploy to Netlify
-
-```bash
-npm run build
-```
-
-Deploy the `dist/` folder to Netlify.
-
-### Deploy to Docker
-
-```bash
-docker build -t jeevan-setu-ai:latest .
-docker run -p 3000:3000 jeevan-setu-ai:latest
-```
-
-## 📚 Documentation
-
-Key documentation files:
-- [AGENTS.md](AGENTS.md) - Lovable AI integration notes
-- [Component Usage Guide](docs/COMPONENTS.md) - How to use UI components
-- [API Integration Guide](docs/API_INTEGRATION.md) - Backend API integration
-- [Deployment Guide](docs/DEPLOYMENT.md) - Deployment options and configurations
 
 ## 🤝 Contributing
 
@@ -422,102 +367,9 @@ We welcome contributions! Here's how to get involved:
    - Reference related issues
    - Ensure linting passes
 
-## 📋 Code Standards
-
-- **TypeScript**: Strict mode enabled, no implicit any
-- **React**: Functional components with hooks
-- **Styling**: Tailwind CSS utility classes
-- **Naming**: camelCase for variables/functions, PascalCase for components
-- **Components**: Keep components small and focused (single responsibility)
-- **Comments**: Use JSDoc for complex logic
-- **Commits**: Use conventional commits (feat:, fix:, docs:, style:, refactor:, test:, chore:)
-
-## 🔄 Git Workflow Notes
-
-This project is connected to [Lovable](https://lovable.dev) for AI-assisted development. Please avoid:
-- Force pushing
-- Rebasing/amending/squashing commits that are already pushed
-- Rewriting published git history
-
-Commits pushed to this branch sync back to Lovable, so keep the branch in a working state.
-
-## 🎯 State Management
-
-### React Query (Server State)
-- Manages API data fetching
-- Caching and synchronization
-- Used for: health records, provider data, user preferences
-
-### React Context (UI State)
-- Authentication state
-- Theme/dark mode
-- Sidebar navigation state
-- Modal/dialog state
-
-### Local State (Component State)
-- Form inputs
-- Local UI interactions
-- Temporary data transformations
-
-## 🌐 Browser Support
-
-- Chrome/Edge: Latest 2 versions
-- Firefox: Latest 2 versions
-- Safari: Latest 2 versions
-- Mobile browsers: iOS Safari 13+, Chrome Mobile 90+
-
-## 📊 Performance Optimizations
-
-- **Code Splitting**: TanStack Router handles automatic code splitting
-- **Lazy Loading**: React.lazy for route-based code splitting
-- **Image Optimization**: Use next-gen formats (WebP)
-- **CSS Optimization**: Tailwind purges unused styles in production
-- **Bundle Analysis**: Use `npm run build` to see bundle size
-
-## 🗺️ Roadmap
-
-- **Current**: MVP with symptom checker and health dashboard
-- **Q3 2025**: Provider network integration and appointment booking
-- **Q4 2025**: Telemedicine video consultation feature
-- **Q1 2026**: Mobile-optimized PWA experience
-- **Q2 2026**: Advanced health analytics and AI chatbot
-- **Q3 2026**: Multi-language support (Hindi, Spanish, etc.)
-
-## 📊 Statistics & Metrics
-
-Track project health through:
-- GitHub Actions for CI/CD
-- Vercel Analytics for web performance
-- User engagement metrics
-- Code coverage reports (when testing is added)
-
-## 💬 Community & Support
-
-- **GitHub Issues**: Report bugs and request features
-- **Discussions**: Ask questions and share ideas
-- **Email**: partho.kumar.shaw@example.com
-- **Documentation**: Check docs/ directory for detailed guides
-
-## 📜 License
-
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
-
-## 👥 Authors & Contributors
-
-- **Partho Kumar Shaw** - Project Lead & Creator
-- Built with ❤️ and powered by [Lovable](https://lovable.dev)
-
-## 🙏 Acknowledgments
-
-- [TanStack](https://tanstack.com/) for amazing routing and query solutions
-- [Radix UI](https://www.radix-ui.com/) for accessible component primitives
-- [Tailwind CSS](https://tailwindcss.com/) for utility-first styling
-- [React](https://react.dev/) community and ecosystem
-- All contributors and supporters of this project
 
 ## 📞 Contact & Links
 
-For inquiries, partnerships, or feedback:
 - **Email**: partho.kumar.shaw@example.com
 - **GitHub**: [@Partho-Kumar-Shaw](https://github.com/Partho-Kumar-Shaw)
 - **Live Demo**: [jeevan-setu-ai-six.vercel.app](https://jeevan-setu-ai-six.vercel.app)
@@ -525,6 +377,6 @@ For inquiries, partnerships, or feedback:
 
 ---
 
-**Made with ❤️ by Partho Kumar Shaw and the Jeevan Setu AI Community**
+**Made with ❤️ by Partho Kumar Shaw**
 
 *Last Updated: July 25, 2026*
