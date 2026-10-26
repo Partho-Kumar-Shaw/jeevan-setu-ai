@@ -370,7 +370,7 @@ We welcome contributions! Here's how to get involved:
 
 ## 📞 Contact & Links
 
-- **Email**: partho.kumar.shaw@example.com
+- **Email**: parthokumarshaw@gmail.com
 - **GitHub**: [@Partho-Kumar-Shaw](https://github.com/Partho-Kumar-Shaw)
 - **Live Demo**: [jeevan-setu-ai-six.vercel.app](https://jeevan-setu-ai-six.vercel.app)
 - **Repository**: [github.com/Partho-Kumar-Shaw/jeevan-setu-ai](https://github.com/Partho-Kumar-Shaw/jeevan-setu-ai)
