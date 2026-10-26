@@ -341,7 +341,7 @@ We welcome contributions! Here's how to get involved:
 
 1. **Fork the Repository**
    ```bash
-   git clone https://github.com/your-username/jeevan-setu-ai.git
+   git clone https://github.com/Partho-Kumar-Shaw/jeevan-setu-ai.git
    ```
 
 2. **Create a Feature Branch**
@@ -372,7 +372,7 @@ We welcome contributions! Here's how to get involved:
 
 - **Email**: parthokumarshaw@gmail.com
 - **GitHub**: [@Partho-Kumar-Shaw](https://github.com/Partho-Kumar-Shaw)
-- **Live Demo**: [jeevan-setu-ai-six.vercel.app](https://jeevan-setu-ai-six.vercel.app)
+- **Live Demo**: [jeevan-setu-ai](https://jeevan-setu-ai-six.vercel.app)
 - **Repository**: [github.com/Partho-Kumar-Shaw/jeevan-setu-ai](https://github.com/Partho-Kumar-Shaw/jeevan-setu-ai)
 
 ---
